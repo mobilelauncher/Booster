@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Free Fire Optimizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #101820;
+            color: white;
+            padding-top: 60px;
+        }
+        button {
+            padding: 15px 25px;
+            background: #00c853;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            margin: 10px;
+            color: white;
+        }
+        #info {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Free Fire Optimizer</h1>
+    <button onclick="boost()">Boost Now</button>
+    <div id="info">
+        <p id="ram"></p>
+        <p id="storage"></p>
+    </div>
+
+    <script>
+        function boost() {
+            AndroidOptimizer.cleanCache();
+            alert("Boosting Done!");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("ram").innerText = "RAM: " + AndroidOptimizer.getRAM();
+            document.getElementById("storage").innerText = "Storage: " + AndroidOptimizer.getStorage();
+        });
+    </script>
+</body>
+</html>
